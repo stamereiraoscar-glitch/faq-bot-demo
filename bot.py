@@ -2,7 +2,7 @@ import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-BOT_TOKEN = "8621904034:AAHc8l1qCJCKJPdlSVIQTi_C5RZPR-mwZ4w "
+BOT_TOKEN = "8621904034:AAHc8l1qCJCKJPdlSVIQTi_C5RZPR-mwZ4w"
 ADMIN_ID = 123456789
 
 bot = Bot(token=BOT_TOKEN)
