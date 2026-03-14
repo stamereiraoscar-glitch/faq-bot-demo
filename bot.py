@@ -4,7 +4,7 @@ from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.filters import Command
 import config
 
-bot = Bot(token=config.8621904034:AAHc8l1qCJCKJPdlSVIQTi_C5RZPR-mwZ4w)
+bot = Bot(token=config.BOT_TOKEN)
 dp = Dispatcher()
 
 lang = config.LANGUAGE
