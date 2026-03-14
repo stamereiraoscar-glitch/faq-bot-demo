@@ -1,9 +1,17 @@
 import os
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_ID = int(os.getenv("ADMIN_ID"))
+ADMIN_ID_RAW = os.getenv("ADMIN_ID")
 
-LANGUAGE = "RU"   # RU или EN
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN variable is missing")
+
+if not ADMIN_ID_RAW:
+    raise ValueError("ADMIN_ID variable is missing")
+
+ADMIN_ID = int(ADMIN_ID_RAW)
+
+LANGUAGE = "RU"
 
 TEXTS = {
     "EN": {
