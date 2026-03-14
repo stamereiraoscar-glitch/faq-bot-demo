@@ -1,5 +1,5 @@
 import asyncio
-from aiogram import Bot, Dispatcher
+from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.filters import Command
 import config
@@ -49,7 +49,8 @@ async def start(message: Message):
     )
 
 
-@dp.message(lambda message: message.text in ["📋 Услуги", "📋 Services"])
+@dp.message(F.text == "📋 Услуги")
+@dp.message(F.text == "📋 Services")
 async def services(message: Message):
     await message.answer(
         config.TEXTS[lang]["services"],
@@ -57,7 +58,8 @@ async def services(message: Message):
     )
 
 
-@dp.message(lambda message: message.text in ["💰 Цены", "💰 Prices"])
+@dp.message(F.text == "💰 Цены")
+@dp.message(F.text == "💰 Prices")
 async def prices(message: Message):
     await message.answer(
         config.TEXTS[lang]["prices"],
@@ -65,7 +67,8 @@ async def prices(message: Message):
     )
 
 
-@dp.message(lambda message: message.text in ["📞 Контакты", "📞 Contacts"])
+@dp.message(F.text == "📞 Контакты")
+@dp.message(F.text == "📞 Contacts")
 async def contacts(message: Message):
     await message.answer(
         config.TEXTS[lang]["contacts"],
@@ -73,7 +76,8 @@ async def contacts(message: Message):
     )
 
 
-@dp.message(lambda message: message.text in ["✉️ Связаться с менеджером", "✉️ Contact manager"])
+@dp.message(F.text == "✉️ Связаться с менеджером")
+@dp.message(F.text == "✉️ Contact manager")
 async def contact_manager(message: Message):
     await message.answer(
         config.TEXTS[lang]["contact_manager"],
@@ -81,7 +85,8 @@ async def contact_manager(message: Message):
     )
 
 
-@dp.message(lambda message: message.text in ["⬅️ Назад", "⬅️ Back"])
+@dp.message(F.text == "⬅️ Назад")
+@dp.message(F.text == "⬅️ Back")
 async def go_back(message: Message):
     await message.answer(
         config.TEXTS[lang]["back_to_menu"],
@@ -91,13 +96,15 @@ async def go_back(message: Message):
 
 @dp.message()
 async def forward_to_admin(message: Message):
-    if message.text in [
+    ignored_buttons = [
         "📋 Услуги", "📋 Services",
         "💰 Цены", "💰 Prices",
         "📞 Контакты", "📞 Contacts",
         "✉️ Связаться с менеджером", "✉️ Contact manager",
         "⬅️ Назад", "⬅️ Back"
-    ]:
+    ]
+
+    if message.text in ignored_buttons:
         return
 
     await bot.send_message(
