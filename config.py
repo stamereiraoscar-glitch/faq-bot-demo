@@ -9,10 +9,10 @@ TEXTS = {
         "start": "Welcome 👋\n\nChoose a section:",
         "services": """Our services:
 
-• Telegram bots
-• Discord bots
-• AI chatbots
-• Business automation""",
+• Telegram bot development
+• Discord bot development
+• AI chatbot integration
+• Business automation bots""",
         "prices": """Example prices:
 
 • FAQ bot — from $60
@@ -21,28 +21,30 @@ TEXTS = {
         "contacts": """Contacts:
 
 Telegram: @yourusername
-Email: example@email.com""",
-        "contact_manager": "Write your message and the manager will reply.",
-        "sent": "Message sent to manager ✅"
+Email: your@email.com""",
+        "contact_manager": "Write your message and it will be sent to the manager.",
+        "sent": "Your message has been sent ✅",
+        "back_to_menu": "You are back in the main menu."
     },
     "RU": {
         "start": "Здравствуйте 👋\n\nВыберите раздел:",
         "services": """Наши услуги:
 
-• Telegram боты
-• Discord боты
-• AI чат-боты
-• Автоматизация бизнеса""",
+• Разработка Telegram-ботов
+• Разработка Discord-ботов
+• Подключение AI в ботов
+• Боты для автоматизации бизнеса""",
         "prices": """Примерные цены:
 
-• FAQ бот — от $60
+• FAQ-бот — от $60
 • Бот заявок — от $100
-• AI бот — от $150""",
+• AI-бот — от $150""",
         "contacts": """Контакты:
 
 Telegram: @yourusername
-Email: example@email.com""",
-        "contact_manager": "Напишите сообщение, менеджер скоро ответит.",
-        "sent": "Сообщение отправлено менеджеру ✅"
+Email: your@email.com""",
+        "contact_manager": "Напишите сообщение, и оно будет отправлено менеджеру.",
+        "sent": "Ваше сообщение отправлено ✅",
+        "back_to_menu": "Вы вернулись в главное меню."
     }
 }
