@@ -1,6 +1,7 @@
-BOT_TOKEN = "8621904034:AAHc8l1qCJCKJPdlSVIQTi_C5RZPR-mwZ4w"
+import os
 
-ADMIN_ID = 898036971
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 LANGUAGE = "RU"   # RU или EN
 
