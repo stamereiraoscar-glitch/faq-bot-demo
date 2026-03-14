@@ -2,11 +2,9 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.filters import Command
+import config
 
-BOT_TOKEN = "8621904034:AAHc8l1qCJCKJPdlSVIQTi_C5RZPR-mwZ4w"
-ADMIN_ID = 123456789
-
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=config.8621904034:AAHc8l1qCJCKJPdlSVIQTi_C5RZPR-mwZ4w)
 dp = Dispatcher()
 
 menu = ReplyKeyboardMarkup(
@@ -28,28 +26,15 @@ async def start(message: Message):
 
 @dp.message(lambda message: message.text == "📋 Services")
 async def services(message: Message):
-    await message.answer(
-        "Our services:\n\n"
-        "• Telegram bots\n"
-        "• Discord bots\n"
-        "• AI chatbots\n"
-        "• Business automation"
-    )
+    await message.answer(config.SERVICES_TEXT)
 
 @dp.message(lambda message: message.text == "💰 Prices")
 async def prices(message: Message):
-    await message.answer(
-        "Example prices:\n\n"
-        "• FAQ bot — from $60\n"
-        "• Lead bot — from $100\n"
-        "• AI bot — from $150"
-    )
+    await message.answer(config.PRICES_TEXT)
 
 @dp.message(lambda message: message.text == "📞 Contacts")
 async def contacts(message: Message):
-    await message.answer(
-        "Contacts:\n\nTelegram: @yourusername"
-    )
+    await message.answer(config.CONTACTS_TEXT)
 
 @dp.message(lambda message: message.text == "✉️ Contact manager")
 async def contact_manager(message: Message):
@@ -58,7 +43,7 @@ async def contact_manager(message: Message):
 @dp.message()
 async def forward_to_admin(message: Message):
     await bot.send_message(
-        ADMIN_ID,
+        config.ADMIN_ID,
         f"New message:\n\n"
         f"User: {message.from_user.full_name}\n"
         f"ID: {message.from_user.id}\n\n"
